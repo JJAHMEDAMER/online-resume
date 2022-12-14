@@ -26,15 +26,21 @@ body {
     padding: 2rem;
 }
 
-h2{
+h2 {
     font-size: 1.2rem;
 }
 
-p{
+h3 {
+    display: flex;
+    justify-content: space-between;
     font-size: 0.9rem;
 }
 
-.page{
+p {
+    font-size: 0.9rem;
+}
+
+.page {
     width: 210mm;
     height: 297mm;
     padding: 2rem;
@@ -48,7 +54,7 @@ p{
     justify-content: center;
 }
 
-.header>h2{
+.header>h2 {
     margin-bottom: 0.7rem;
     font-size: 2.2rem;
 }
@@ -80,7 +86,7 @@ p{
 }
 
 .section {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .section>h2::after {
@@ -95,7 +101,7 @@ p{
     margin-right: auto;
 }
 
-.skill--container{
+.skill--container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,19 +110,19 @@ p{
 }
 
 .skill {
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 0.25em 0.5em;
-  border-radius: 0.4rem;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  /* position: relative;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    border-radius: 0.4rem;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    /* position: relative;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation; */
@@ -133,4 +139,3 @@ p{
     padding: 0.25em 0.75em;
   }
 } */
-
