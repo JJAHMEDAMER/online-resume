@@ -195,18 +195,18 @@ li {
     border-radius: 0.4rem;
 }
 
-.leadership>div{
+.para-list>div{
     margin-bottom: 0.5rem;
 }
 
-.leadership>div>h3{
+.para-list>div>h3{
     margin-bottom: 0.3rem;
 }
 
-.leadership>div>p{
+.para-list>div>p{
     margin-left: 0.8rem;
 }
 
-.leadership>div>p>span{
+.para-list>div>p>span{
     margin-right: 0.4rem;
 }
