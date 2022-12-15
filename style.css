@@ -322,6 +322,14 @@ li {
 
 @media print {
 
+    body{
+        padding: 0;
+    }
+
+    .resume{
+        padding: 0;
+    }
+
     *::after,
     .divider,
     .tag {
@@ -340,5 +348,9 @@ li {
     .page {
         width: 210mm;
         height: 297mm;
+    }
+
+    .button-28{
+        display: none;
     }
 }
