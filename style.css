@@ -117,15 +117,15 @@ li {
     margin-top: 2rem;
 }
 
-/* .divider{
-    width: 95%;
+.divider{
+    width: 75%;
     height: 1px;
     background-color: var(--dark-gray);
     margin-top: 0.3rem;
     margin-bottom: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-} */
+}
 
 
 .section>h2::after {
