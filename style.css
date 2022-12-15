@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+@media print {
+    *::after,
+    .divider {
+        -webkit-print-color-adjust: exact !important;
+        /* Chrome, Safari 6 – 15.3, Edge */
+        color-adjust: exact !important;
+        /* Firefox 48 – 96 */
+        print-color-adjust: exact !important;
+        /* Firefox 97+, Safari 15.4+ */
+    }
+}
+
 :root {
     --black-color: #292929;
     --white-color: rgb(255, 255, 255);
@@ -52,7 +64,7 @@ a:hover {
     color: var(--link-color-hover);
 }
 
-h4{
+h4 {
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -117,7 +129,7 @@ li {
     margin-top: 2rem;
 }
 
-.divider{
+.divider {
     width: 75%;
     height: 1px;
     background-color: var(--dark-gray);
@@ -217,18 +229,18 @@ li {
     border-radius: 0.4rem;
 }
 
-.para-list>div{
+.para-list>div {
     margin-bottom: 0.5rem;
 }
 
-.para-list>div>h3{
+.para-list>div>h3 {
     margin-bottom: 0.2rem;
 }
 
-.para-list>div>p{
+.para-list>div>p {
     margin-left: 0.8rem;
 }
 
-.para-list>div>p>span{
+.para-list>div>p>span {
     margin-right: 0.4rem;
 }
