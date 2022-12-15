@@ -47,6 +47,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 1rem;
     width: 100%;
     font-size: 0.9rem;
     font-weight: 700;
@@ -315,18 +316,22 @@ li {
         grid-template-columns: 1fr;
     }
 
-    .button-28{
+    .button-28 {
         width: 100%;
     }
 }
 
 @media print {
 
-    body{
+    .page:last-child {
+        page-break-after: auto;
+    }
+
+    body {
         padding: 0;
     }
 
-    .resume{
+    .resume {
         padding: 0;
     }
 
@@ -350,7 +355,7 @@ li {
         height: 297mm;
     }
 
-    .button-28{
+    .button-28 {
         display: none;
     }
 }
