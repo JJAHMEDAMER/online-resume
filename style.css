@@ -194,3 +194,19 @@ li {
     padding: 0.35em 0.7em;
     border-radius: 0.4rem;
 }
+
+.leadership>div{
+    margin-bottom: 0.5rem;
+}
+
+.leadership>div>h3{
+    margin-bottom: 0.3rem;
+}
+
+.leadership>div>p{
+    margin-left: 0.8rem;
+}
+
+.leadership>div>p>span{
+    margin-right: 0.4rem;
+}
