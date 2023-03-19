@@ -41,9 +41,11 @@ const { title } = Astro.props;
   ::-webkit-scrollbar {
     width: var(--scroll-size, 10px);
     height: var(--scroll-size, 10px);
+	background-color: rgb(42, 42, 42);
   }
 
   ::-webkit-scrollbar-track {
+	margin-block: 0.5em;
     background-color: var(--scroll-track, transparent);
     border-radius: var(--scroll-track-radius, var(--scroll-radius));
   }
@@ -53,6 +55,7 @@ const { title } = Astro.props;
     background-image: var(--scroll-thumb, none);
     border-radius: var(--scroll-thumb-radius, var(--scroll-radius));
   }
+  
 
   *,
   *::before,
