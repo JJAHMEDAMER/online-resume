@@ -35,6 +35,14 @@ import ProgrammingSkill from "../block/ProgrammingSkill.astro";
       <ProgrammingSkill />
     </div>
   </div>
+
+  <a
+    class="download"
+    href="Ahmed-Mohammed-Amer-Resume.pdf"
+    download="Ahmed-Mohammed-Amer-Resume"
+  >
+    <img src="download.png" alt="download" />
+  </a>
 </Layout>
 
 <style is:global>
@@ -65,6 +73,22 @@ import ProgrammingSkill from "../block/ProgrammingSkill.astro";
     z-index: -1;
   }
 
+  .download {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999px;
+
+    padding: 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--scroll-thumb);
+    background: var(--scroll-thumb);
+  }
+
+  .download > img {
+    width: 1.5rem;
+  }
+
   .page {
     display: flex;
     flex-direction: column;
@@ -87,7 +111,7 @@ import ProgrammingSkill from "../block/ProgrammingSkill.astro";
       flex-basis: 0;
       flex-grow: 1;
     }
-    
+
     .resume {
       display: flex;
       margin: 4rem;
@@ -95,7 +119,8 @@ import ProgrammingSkill from "../block/ProgrammingSkill.astro";
   }
 
   @media print {
-    video {
+    video,
+    .download {
       display: none;
     }
   }
