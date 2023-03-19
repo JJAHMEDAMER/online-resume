@@ -1,0 +1,46 @@
+---
+import Bidirectional from "../components/Bidirectional.astro";
+import Point from "../components/Point.astro";
+import Section from "../layouts/Section.astro";
+---
+
+<Section title="Graduation Project">
+  <p>
+    This project revolved around creating smart solution that would improve the
+    campus by utilizing Internet of things. I implemented a system that can
+    automatically register the student for attendance without the need to waist
+    time or disturbing lectures
+  </p>
+
+  <Bidirectional left="Image Processing (Facial Recognition)" />
+  <Point
+    pointsList={[
+      "Detecting the faces in a given image using openCV and the HOG algorithm",
+      "Extracting feature from submitted images using an OpenFace pertained model",
+    ]}
+  />
+  <Bidirectional left="Frontend Application Using REACT" />
+  <Point
+    pointsList={[
+      "Student need to upload images that would be used for the facial recognition machine learning model by OpenFace",
+      "Creating a dashboard for the users to view the attendance for each lecture and overall attendance rate",
+      "Creating protected routes for login users and spical routes for admins",
+    ]}
+  />
+  <Bidirectional left="Backend Server Using FastAPI" />
+  <Point
+    pointsList={[
+      "Design a backend that could handel the various request that is submitted by the user",
+      "Manage users login and signup request using Json Web Tokens for authorization",
+      "Create middleware to process the images and store the identifying feature for each user",
+      "Create routes for the lecture hall cameras to send the images of the attended student and use middleware to find the faces in the images and recognize them then updating the database for the attendees",
+    ]}
+  />
+  <Bidirectional left="Deployment Docker and Vercel" />
+  <Point
+    pointsList={[
+      "Vercel is used for the frontend application with modification because this project use react-router instead of the folder base routing of NextJS",
+      "Docker container is used for the backend server and hosted on railway, docker allows to configure the environment and install necessary system dependencies that is required fro the face recognition and OpenCV to work as intended",
+    ]}
+  />
+</Section>

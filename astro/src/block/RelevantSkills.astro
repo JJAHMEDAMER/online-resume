@@ -1,0 +1,60 @@
+---
+import Section from "../layouts/Section.astro";
+
+const skills = [
+  "Python",
+  "HTML",
+  "CSS",
+  "Tailwind",
+  "JavaScript",
+  "Docker",
+  "Flutter",
+  "React",
+  "Astro",
+  "C++",
+  "Linux",
+  "Git",
+  "FastAPI",
+  "SQLAlchemy",
+  "FetchAPI",
+  "Image Processing",
+  "Machine Learning",
+];
+---
+
+<Section title="Relevant Skills">
+  <div>
+    {skills.map((item) => <p class="skill">{item}</p>)}
+  </div>
+</Section>
+
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .skill {
+    font-size: 0.9rem;
+    padding: 0.12rem 0.9rem;
+    color: white;
+    background-color: var(--black);
+    border-radius: 999px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+  }
+
+  @media print {
+    .skill {
+      -webkit-print-color-adjust: exact !important;
+      /* Chrome, Safari 6 – 15.3, Edge */
+      color-adjust: exact !important;
+      /* Firefox 48 – 96 */
+      print-color-adjust: exact !important;
+      /* Firefox 97+, Safari 15.4+ */
+    }
+  }
+</style>

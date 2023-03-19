@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Blocks
+import Contact from "../block/Contact.astro";
+import Objective from "../block/Objective.astro";
+import Education from "../block/Education.astro";
+import Training from "../block/Training.astro";
+import GraduationProject from "../block/GraduationProject.astro";
+import RelevantSkills from "../block/RelevantSkills.astro";
+import Projects from "../block/Projects.astro";
+import Leadership from "../block/Leadership.astro";
+import ProgrammingSkill from "../block/ProgrammingSkill.astro";
+---
+
+<Layout title="Ahmed Amer Resume">
+  <video autoplay muted loop id="myVideo">
+    <source src="Code.mp4" type="video/mp4" />
+  </video>
+
+  <div class="resume">
+    <div class="page">
+      <h1 class="name">Ahmed Mohammed Amer</h1>
+      <Contact />
+      <Objective />
+      <RelevantSkills />
+      <Education />
+      <GraduationProject />
+      <Leadership />
+    </div>
+
+    <div class="page">
+      <Training />
+      <Projects />
+      <ProgrammingSkill />
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .name {
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  p,
+  a {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  body {
+    /* background: #e127f6; */
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+  }
+
+  video {
+    position: fixed;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    margin: 2rem 1rem;
+    background-color: white;
+    aspect-ratio: 210/297;
+    /* overflow: hidden; */
+  }
+
+  @media screen and (min-width: 600px) {
+    .page {
+      margin: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    .page {
+      margin: 2rem;
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+    
+    .resume {
+      display: flex;
+      margin: 4rem;
+    }
+  }
+
+  @media print {
+    video {
+      display: none;
+    }
+  }
+</style>
