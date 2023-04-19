@@ -15,32 +15,44 @@ import Section from "../layouts/Section.astro";
   <Bidirectional left="Image Processing (Facial Recognition)" />
   <Point
     pointsList={[
-      "Detecting the faces in a given image using openCV and the HOG algorithm",
-      "Extracting feature from submitted images using an OpenFace pertained model",
+      "Detect the faces in a given image using openCV and the HOG algorithm",
+      "Extract key features from each face in submitted images using an OpenFace pertained model",
     ]}
   />
   <Bidirectional left="Frontend Application Using REACT" />
   <Point
     pointsList={[
-      "Student need to upload images that would be used for the facial recognition machine learning model by OpenFace",
-      "Creating a dashboard for the users to view the attendance for each lecture and overall attendance rate",
-      "Creating protected routes for login users and spical routes for admins",
+      "Student upload images used for the facial recognition machine learning model by OpenFace",
+      "Create dashboard for the users to view the attendance for each lecture and attendance rate",
+      "Protect routes for logged in users and special routes for admins",
+      "Admin access to create courses manually adjust attendance if needed"
     ]}
   />
   <Bidirectional left="Backend Server Using FastAPI" />
   <Point
     pointsList={[
+      "Design a Restful API that handles the incoming request",
       "Design a backend that could handel the various request that is submitted by the user",
-      "Manage users login and signup request using Json Web Tokens for authorization",
+      "Manage users login and sign up request using Json Web Tokens for authorization",
       "Create middleware to process the images and store the identifying feature for each user",
-      "Create routes for the lecture hall cameras to send the images of the attended student and use middleware to find the faces in the images and recognize them then updating the database for the attendees",
-    ]}
+      "Create routes for login, sign up, authentication, upload image, add or delete courses, and IP cameras"
+   ]}
   />
   <Bidirectional left="Deployment Docker and Vercel" />
   <Point
     pointsList={[
-      "Vercel is used for the frontend application with modification because this project use react-router instead of the folder base routing of NextJS",
-      "Docker container is used for the backend server and hosted on railway, docker allows to configure the environment and install necessary system dependencies that is required fro the face recognition and OpenCV to work as intended",
+      "Frontend (React) is deployed on vercel.com",
+      "Backend (Restful API) is deployed on railway using a docker container",
+      // "Vercel is used for the frontend application with modification because this project use react-router instead of the folder base routing of NextJS",
+      // "Docker container is used for the backend server and hosted on railway, docker allows to configure the environment and install necessary system dependencies that is required fro the face recognition and OpenCV to work as intended",
+    ]}
+  />
+  <Bidirectional left="Relational Database (SQLalchemy-SQlite)" />
+  <Point
+    pointsList={[
+      "Design the database that stores all data and attribute for students and course",
+      "Create a one-to-one relationship with the student table and image table",
+      "Create a many-to-many relation between student table and course table"
     ]}
   />
 </Section>
