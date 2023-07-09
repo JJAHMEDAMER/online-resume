@@ -1,10 +1,23 @@
 ---
 import Section from "../layouts/Section.astro";
 import Point from "../components/Point.astro";
----
 
-<Section title="Programming Skills">
-  <Point pointsList={[
+const route = Astro.url.pathname;
+
+let points;
+let title;
+if (route === "/communication") {
+  title = "Enginnering Skills";
+  points = [
+    "Proficiency in a variety of communication engineering software, including MATLAB, Simulink, and Cadence.",
+    "Strong analytical and problem-solving skills.",
+    "Excellent communication and teamwork skills.",
+    "Proven ability to work independently and as part of a team.",
+    "A passion for engineering and a desire to learn new things.",
+  ];
+} else {
+  title = "Programming Skills";
+  points = [
     "Proficient Languages (Python, JavaScript, C++, HTML, CSS, Dart)",
     "Proficient Frameworks (Flutter, React, Flask, FastAPI, Next JS)",
     "Proficient in GIT version control (GIT)",
@@ -14,6 +27,11 @@ import Point from "../components/Point.astro";
     "Working Knowledge of databases (MySQL, postgreSQL)",
     "Object Oriented Programming and Functional Programming",
     "Great Documentation Skills",
-    "Strong communication expertise and interpersonal skills"
-  ]} />
+    "Strong communication expertise and interpersonal skills",
+  ];
+}
+---
+
+<Section title={title}>
+  <Point pointsList={points} />
 </Section>
