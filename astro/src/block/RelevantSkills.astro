@@ -1,27 +1,34 @@
 ---
 import Section from "../layouts/Section.astro";
 
-const skills = [
-  "Python",
-  "HTML",
-  "CSS",
-  "Tailwind",
-  "JavaScript",
-  "FetchAPI",
-  "TypeScript",
-  "Docker",
-  "Flutter",
-  "React",
-  "Astro",
-  "C++",
-  "Linux",
-  "Git",
-  "FastAPI",
-  "SQLAlchemy",
-  "Image Processing",
-  "Machine Learning",
-  "OpenCV"
-];
+const route = Astro.url.pathname;
+
+let skills;
+if (route === "/communication") {
+  skills = ["Python", "C++", "Linux", "Git", "AWS", "Microsoft Azure", "Bash"];
+} else {
+  skills = [
+    "Python",
+    "HTML",
+    "CSS",
+    "Tailwind",
+    "JavaScript",
+    "FetchAPI",
+    "TypeScript",
+    "Docker",
+    "Flutter",
+    "React",
+    "Astro",
+    "C++",
+    "Linux",
+    "Git",
+    "FastAPI",
+    "SQLAlchemy",
+    "Image Processing",
+    "Machine Learning",
+    "OpenCV",
+  ];
+}
 ---
 
 <Section title="Relevant Skills">
