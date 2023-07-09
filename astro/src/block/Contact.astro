@@ -1,15 +1,25 @@
 ---
+const route = Astro.url.pathname;
 ---
 
 <div>
   <p>Cairo</p>
-  <a href="https://www.linkedin.com/in/jjahmedamer/" target="_blank">LinkedIn</a
-  >
-  <a href="https://github.com/JJAHMEDAMER" target="_blank">GitHub</a>
+  {
+    route != "/communication" ? (
+      <>
+        <a href="https://www.linkedin.com/in/jjahmedamer/" target="_blank">
+          LinkedIn
+        </a>
+        <a href="https://github.com/JJAHMEDAMER" target="_blank">
+          GitHub
+        </a>
+      </>
+    ) : null
+  }
   <a href="tel:01069446690">01069446690</a>
-  <a href="mailto:jjahmedamer@gmail.com" target="_blank"
-    >jjahmedamer@gmail.com</a
-  >
+  <a href="mailto:jjahmedamer@gmail.com" target="_blank">
+    jjahmedamer@gmail.com
+  </a>
 </div>
 
 <style>
