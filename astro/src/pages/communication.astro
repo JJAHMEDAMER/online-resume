@@ -14,107 +14,109 @@ import ProgrammingSkill from "../block/ProgrammingSkill.astro";
 ---
 
 <Layout title="Ahmed Amer Resume">
-  <video autoplay muted loop id="myVideo">
-    <source src="Code.mp4" type="video/mp4" />
-  </video>
+    <video autoplay muted loop id="myVideo">
+        <source src="Code.mp4" type="video/mp4" />
+    </video>
 
-  <div class="resume">
-    <div class="page">
-      <h1 class="name">Ahmed Mohammed Amer</h1>
-      <Contact />
+    <div class="resume">
+        <div class="page">
+            <h1 class="name">Ahmed Mohammed Amer</h1>
+            <Contact />
+            <Objective />
+            <RelevantSkills />
+            <Education />
+            <WorkExperience />
+            <Leadership />
+            <ProgrammingSkill />
+        </div>
     </div>
 
-    <div class="page">
-
-    </div>
-  </div>
-
-  <a
-    class="download"
-    href="Ahmed-Mohammed-Amer-Resume.pdf"
-    download="Ahmed-Mohammed-Amer-Resume"
-  >
-    <img src="download.png" alt="download" />
-  </a>
+    <a
+        class="download"
+        href="Ahmed-Mohammed-Amer-Resume.pdf"
+        download="Ahmed-Mohammed-Amer-Resume"
+    >
+        <img src="download.png" alt="download" />
+    </a>
 </Layout>
 
 <style is:global>
-  .name {
-    text-align: center;
-    margin-bottom: 0.8rem;
-  }
-
-  p,
-  a {
-    font-size: 0.8rem;
-    line-height: 1.3;
-  }
-
-  body {
-    /* background: #e127f6; */
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
-  }
-
-  video {
-    position: fixed;
-    top: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-  .download {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 999px;
-
-    padding: 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--scroll-thumb);
-    background: var(--scroll-thumb);
-  }
-
-  .download > img {
-    width: 1.5rem;
-  }
-
-  .page {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 2rem;
-    margin: 2rem 1rem;
-    background-color: white;
-    aspect-ratio: 210/297;
-    /* overflow: hidden; */
-  }
-
-  @media screen and (min-width: 600px) {
-    .page {
-      margin: 4rem;
-    }
-  }
-
-  @media screen and (min-width: 950px) {
-    .page {
-      margin: 2rem;
-      flex-basis: 0;
-      flex-grow: 1;
+    .name {
+        text-align: center;
+        margin-bottom: 0.8rem;
     }
 
-    .resume {
-      display: flex;
-      margin: 4rem;
+    p,
+    a {
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
-  }
 
-  @media print {
-    video,
+    body {
+        /* background: #e127f6; */
+        width: 100%;
+        min-height: 100%;
+        height: 100%;
+    }
+
+    video {
+        position: fixed;
+        top: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+
     .download {
-      display: none;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 999px;
+
+        padding: 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--scroll-thumb);
+        background: var(--scroll-thumb);
     }
-  }
+
+    .download > img {
+        width: 1.5rem;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem;
+        margin: 2rem 1rem;
+        background-color: white;
+        aspect-ratio: 210/297;
+        /* overflow: hidden; */
+    }
+
+    @media screen and (min-width: 600px) {
+        .page {
+            margin: 4rem;
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        .page {
+            margin: 2rem;
+            flex-basis: 0;
+            flex-grow: 1;
+        }
+
+        .resume {
+            display: flex;
+            margin: 4rem;
+        }
+    }
+
+    @media print {
+        video,
+        .download {
+            display: none;
+        }
+    }
 </style>
