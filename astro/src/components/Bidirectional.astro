@@ -1,8 +1,19 @@
 ---
-const { left, right = null } = Astro.props;
+const { left, right = null, href = null } = Astro.props;
 ---
 
-<p class="point">{left}<span>{right}</span></p>
+<p class="point">
+  {left}
+  {
+    href ? (
+      <a href={href} target="_blank">
+        {right}
+      </a>
+    ) : (
+      <span>{right}</span>
+    )
+  }
+</p>
 
 <style>
   .point {
