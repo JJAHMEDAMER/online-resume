@@ -18,14 +18,14 @@ if (route === "/communication") {
 } else {
   title = "Programming Skills";
   points = [
-    "Proficient Languages (Python, JavaScript, C++, HTML, CSS, Dart)",
-    "Proficient Frameworks (Flutter, React, Flask, FastAPI, Next JS)",
+    "Proficient Languages (JavaScript, HTML, CSS, Python)",
+    "Proficient Frameworks (React, FastAPI, Next JS)",
     "Proficient in GIT version control (GIT)",
     "Powerful skills in API development, specifically for web use",
-    "Experienced in Unix/Linux environment and Bash scripting.",
+    "Experienced in Unix/Linux environment",
     "Experienced with ORMs (SQLalchemy)",
     "Working Knowledge of databases (MySQL, postgreSQL)",
-    "Object Oriented Programming and Functional Programming",
+    "OOP and Functional Programming",
     "Great Documentation Skills",
     "Strong communication expertise and interpersonal skills",
   ];
@@ -33,5 +33,15 @@ if (route === "/communication") {
 ---
 
 <Section title={title}>
-  <Point pointsList={points} />
+  <div class="two-col">
+    <Point pointsList={points.slice(0, points.length / 2)} />
+    <Point pointsList={points.slice(points.length / 2, points.length)} />
+  </div>
 </Section>
+
+<style>
+  .two-col {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
