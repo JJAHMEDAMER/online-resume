@@ -6,8 +6,48 @@ import Bidirectional from "../components/Bidirectional.astro";
 
 <Section title="Experience">
   <div class="mb">
-    <Bidirectional left="Systel (Motorola)" right="Smart Village 2022" />
-    <p class="job-title">Internship</p>
+    <Bidirectional
+      left="Career Studio (Workforce Development Solution)"
+      right="Los Angeles (Remote)"
+    />
+    <Bidirectional
+      className="job-title"
+      left="Frontend Lead Internship"
+      right="July 2023 - Current"
+    />
+    <Point
+      pointsList={[
+        "Implement and maintain feature requirements using React",
+        "Create and maintain frontend documentation",
+        "Managing and mentoring the front end development team",
+        "Communications with project manger",
+        "GitHub Master",
+      ]}
+    />
+  </div>
+
+  <div class="mb">
+    <Bidirectional left="TUV Austria" right="Sheikh Zayed" />
+    <Bidirectional
+      className="job-title"
+      left="Wordpress Developer Internship"
+      right="July 2023 - Current"
+    />
+    <Point
+      pointsList={[
+        "Meet with clients to discuss website design and function",
+        "Design and build the website front-end using wordpress",
+      ]}
+    />
+  </div>
+
+  <div class="mb">
+    <Bidirectional left="Systel (Motorola)" right="Smart Village" />
+    <Bidirectional
+      className="job-title"
+      left="Internship"
+      right="July 2022 - Sep 2022"
+    />
     <Point
       pointsList={[
         "Design an access point system using Link Planer and make basic configuration and give an IP address",
@@ -26,9 +66,13 @@ import Bidirectional from "../components/Bidirectional.astro";
   <div class="mb">
     <Bidirectional
       left="National Telecommunication Institute"
-      right="Smart Village 2021"
+      right="Online (Covid-19)"
     />
-    <p class="job-title">Internship</p>
+    <Bidirectional
+      className="job-title"
+      left="Internship"
+      right="July 2021 - Aug 2021"
+    />
     <Point
       pointsList={[
         "Create deploy and manage Virtual Machines across clusters of Hosts",
