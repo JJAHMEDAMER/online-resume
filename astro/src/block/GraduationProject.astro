@@ -5,6 +5,7 @@ import Section from "../layouts/Section.astro";
 ---
 
 <Section title="Graduation Project (Grade: A+)">
+  <!-- Summary -->
   <p>
     The project revolved around creating a smart solution that would improve the
     campus by utilizing the Internet of Things (IoT). I decided implemented a
@@ -12,14 +13,16 @@ import Section from "../layouts/Section.astro";
     need to waste time or disturb lectures.
   </p>
 
-  <!-- <Bidirectional left="Image Processing (Facial Recognition)" />
+  <!-- Face recognition -->
+  <Bidirectional left="Image Processing (Facial Recognition)" />
   <Point
     pointsList={[
       "Detect the faces in a given image using openCV and the HOG algorithm",
       "Extract key features from each face in submitted images using an OpenFace pertained model",
     ]}
-  /> -->
+  />
 
+  <!-- Frontend -->
   <Bidirectional
     left="Frontend Application (React)"
     right="Live link"
@@ -33,6 +36,8 @@ import Section from "../layouts/Section.astro";
       "Admin access to create courses manually adjust attendance if needed",
     ]}
   />
+
+  <!-- Backend -->
   <Bidirectional left="Backend Server (FastAPI)" />
   <Point
     pointsList={[
@@ -43,6 +48,8 @@ import Section from "../layouts/Section.astro";
       "Create routes for login, sign up, authentication, upload image, add or delete courses, and IP cameras",
     ]}
   />
+
+  <!-- Deployment -->
   <Bidirectional left="Deployment (Azure)" />
   <Point
     pointsList={[
@@ -55,6 +62,8 @@ import Section from "../layouts/Section.astro";
       // "Docker container is used for the backend server and hosted on railway, docker allows to configure the environment and install necessary system dependencies that is required fro the face recognition and OpenCV to work as intended",
     ]}
   />
+
+  <!-- Database  -->
   <Bidirectional left="Relational Database (PostgreSQL)" />
   <Point
     pointsList={[
