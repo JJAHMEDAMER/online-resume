@@ -1,0 +1,22 @@
+---
+import Bidirectional from "../components/Bidirectional.astro";
+import Point from "../components/Point.astro";
+import Section from "../layouts/Section.astro";
+---
+
+<Section title="Graduation Project (Grade: A+)">
+  <Bidirectional
+    left="Auto Attendance System"
+    right="Live link"
+    href="https://asu-auto-attendance.vercel.app/"
+  />
+  <Point
+    pointsList={[
+      "Implemented facial recognition using OpenFace for automatic student attendance.",
+      "Created a React application with attendance tracking and user-friendly dashboards.",
+      "Developed a FastAPI server with JWT-based authorization for user management and requests.",
+      "Deployed React frontend on vercel.com and utilized Azure VM with Nginx for backend management.",
+      "Designed a PostgreSQL database for storing student and course data, ensuring data integrity.",
+    ]}
+  />
+</Section>
