@@ -3,7 +3,7 @@ import Bidirectional from "../../components/Bidirectional.astro";
 import Point from "../../components/Point.astro";
 ---
 
-<div class="mb">
+<>
   <Bidirectional left="Systel (Motorola)" right="Smart Village" />
   <Bidirectional
     className="job-title"
@@ -23,4 +23,11 @@ import Point from "../../components/Point.astro";
       // "Design and configure surveyance systems by setting up switches, cameras, NVR or DVR, then setting up a control room with a monitor to display the camera feed. Understand the concept of PoE power over Ip",
     ]}
   />
-</div>
+</>
+
+<style>
+  .job-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+</style>

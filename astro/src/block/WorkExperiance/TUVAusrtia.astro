@@ -3,7 +3,7 @@ import Bidirectional from "../../components/Bidirectional.astro";
 import Point from "../../components/Point.astro";
 ---
 
-<div class="mb">
+<>
   <Bidirectional left="TUV Austria" right="Sheikh Zayed" />
   <Bidirectional
     className="job-title"
@@ -23,4 +23,11 @@ import Point from "../../components/Point.astro";
       // "Migrate from wordpress to NextJS",
     ]}
   />
-</div>
+</>
+
+<style>
+  .job-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+</style>
