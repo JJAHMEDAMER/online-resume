@@ -1,0 +1,24 @@
+---
+import Bidirectional from "../../components/Bidirectional.astro";
+import Point from "../../components/Point.astro";
+---
+
+<div class="mb">
+  <Bidirectional
+    left="National Telecommunication Institute"
+    right="Online (Covid-19)"
+  />
+  <Bidirectional
+    className="job-title"
+    left="Internship"
+    right="July 2021 - Aug 2021"
+  />
+  <Point
+    pointsList={[
+      "Create deploy and manage Virtual Machines across clusters of Hosts",
+      "Create storage system for the virtual machines",
+      "Create security group and administrative level for managing the virtual machine",
+      "Used KVM, CNA and Linux",
+    ]}
+  />
+</div>

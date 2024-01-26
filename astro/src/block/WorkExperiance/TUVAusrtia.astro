@@ -1,0 +1,26 @@
+---
+import Bidirectional from "../../components/Bidirectional.astro";
+import Point from "../../components/Point.astro";
+---
+
+<div class="mb">
+  <Bidirectional left="TUV Austria" right="Sheikh Zayed" />
+  <Bidirectional
+    className="job-title"
+    left="Fullstack Developer"
+    right="June 2023 - Current"
+  />
+  <Point
+    pointsList={[
+      "Develop a frontend website used by 1000+ customer",
+      "Built over 35 reusable UI components and libraries",
+      "Architect a validation system for customer to check the validity of the certificate issued by the company",
+      "Design an API and a SQL database",
+      "Developed and maintained user interfaces for web application using NextJs, ContextAPI, Tailwind.",
+      // "Designed responsive web pages of user interface",
+      // "Partnered with designer teams to take wireframes from conception to implementation.",
+      // "Wrote comprehensive code documentation, including inline comments, docblocks, and README files.",
+      // "Migrate from wordpress to NextJS",
+    ]}
+  />
+</div>
