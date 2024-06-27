@@ -1,0 +1,28 @@
+---
+import Bidirectional from "../../components/Bidirectional.astro";
+import Point from "../../components/Point.astro";
+---
+
+<>
+  <Bidirectional left="MoVision" right="Germany (Remote)" />
+  <Bidirectional
+    className="job-title"
+    left="Frontend Developer"
+    right="April 2024 - Current"
+  />
+  <Point
+    pointsList={[
+      "Designed and implemented a Drag and Drop Email Builder component using native APIs.",
+      "Created customizable style forms for each component to enhance user customization.",
+      "Developed editable text fields for email headers, paragraphs, buttons, etc.",
+      "Successfully migrated code base to Vite and Tailwind, implementing Prettier and ESLint rules for code cleanliness and organization",
+    ]}
+  />
+</>
+
+<style>
+  .job-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+</style>
