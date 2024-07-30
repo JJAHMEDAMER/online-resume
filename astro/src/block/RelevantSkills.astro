@@ -1,57 +1,93 @@
 ---
 import Section from "../layouts/Section.astro";
+import { getForPosition } from "../utils";
 
-const route = Astro.url.pathname;
+const { position } = Astro.params;
 
 let skills;
-if (route === "/communication") {
+if (position === "/communication") {
   skills = ["Python", "C++", "Linux", "Git", "AWS", "Microsoft Azure", "Bash"];
 } else {
-  skills = [
-    /** Frontend */
-    "React",
-    "Redux/Toolkit",
-    "Jotai",
-    // "Next Js",
-    // "HTML",
-    // "CSS",
-    "Tailwind",
-    "MUI",
-    "DataGrid",
-    "JavaScript",
-    "TypeScript",
-    // "FetchAPI",
+  skills = getForPosition<string[]>(position, {
+    frontend: [
+      /** Frontend */
+      "React",
+      "Redux/Toolkit",
+      "Jotai",
+      "Next Js",
+      "HTML",
+      "CSS",
+      "Tailwind",
+      "MUI",
+      "DataGrid",
+      "JavaScript",
+      "TypeScript",
+      "FetchAPI",
+      "GIT",
+    ],
+    backend: [
+      /* Backend */
+      "Node JS",
+      "Express JS",
+      "Python",
+      // "Django",
+      // "FastAPI",
 
-    /* Backend */
-    "Node JS",
-    "Express JS",
-    "Python",
-    // "Django",
-    // "FastAPI",
+      /** Stacks */
+      "MERN Stack",
 
-    /** Stacks */
-    "MERN Stack",
+      "PostgreSQL",
+      "MongoDB",
+      "Supabase",
+      "Firebase",
+      "GIT",
+    ],
+    fullstack: [
+      /** Frontend */
+      "React",
+      "Redux/Toolkit",
+      "Jotai",
+      // "Next Js",
+      // "HTML",
+      // "CSS",
+      "Tailwind",
+      "MUI",
+      "DataGrid",
+      "JavaScript",
+      "TypeScript",
+      // "FetchAPI",
 
-    /* ML/AI */
-    // "Image Processing",
-    // "Machine Learning",
-    // "OpenCV",
+      /* Backend */
+      "Node JS",
+      "Express JS",
+      "Python",
+      // "Django",
+      // "FastAPI",
 
-    /* Databases */
-    // "SQLAlchemy",
-    "PostgreSQL",
-    "MongoDB",
-    "Supabase",
-    "Firebase",
+      /** Stacks */
+      "MERN Stack",
 
-    /** Other */
-    // "Docker",
-    // "Flutter",
-    // "Astro",
-    // "C++",
-    // "Linux",
-    "Git",
-  ];
+      /* ML/AI */
+      // "Image Processing",
+      // "Machine Learning",
+      // "OpenCV",
+
+      /* Databases */
+      // "SQLAlchemy",
+      "PostgreSQL",
+      "MongoDB",
+      "Supabase",
+      "Firebase",
+
+      /** Other */
+      // "Docker",
+      // "Flutter",
+      // "Astro",
+      // "C++",
+      // "Linux",
+      "Git",
+    ],
+  });
 }
 ---
 
