@@ -1,8 +1,10 @@
 ---
 import Section from "../layouts/Section.astro";
 import Point from "../components/Point.astro";
+import { getForPosition, capitalize } from "../utils";
 
 const route = Astro.url.pathname;
+const { position } = Astro.params;
 
 let points;
 let title;
@@ -16,21 +18,43 @@ if (route === "/communication") {
     "A passion for engineering and a desire to learn new things.",
   ];
 } else {
-  title = "Programming Skills";
-  points = [
-    "Proficient Languages (JavaScript, HTML, CSS, Python)",
-    "Proficient Frameworks (React, Express, FastAPI, Next JS)",
-    "Working Knowledge of databases (MongoDb, MySQL, postgreSQL)",
-    "Proficient in styling tools such as Tailwind, Material UI, CSS Modules, and SCSS.",
-    "Working knowledge with SAAS tools (SupabaseAuth, Firebase)",
+  title = `${capitalize(position)} Skills`;
+  const generalPoints = [
     "Proficient in GIT version control (GIT)",
-    "Experienced with ORMs (Mongoose, SQLalchemy)",
-    "Powerful skills in API development, specifically for web use",
-    "Experienced in Unix/Linux environment",
     "OOP and Functional Programming",
     "Great Documentation Skills",
     "Strong communication expertise and interpersonal skills",
+    "Capable of managing projects and delivering results independently in a remote environment",
+    "Effective in working with cross-functional teams remotely",
   ];
+  points = getForPosition<string[]>(position, {
+    frontend: [
+      "Proficient Languages (JavaScript, HTML, CSS, Python)",
+      "Proficient Frameworks (React, Express, FastAPI, Next JS)",
+      "Proficient in styling tools such as Tailwind, Material UI, CSS Modules, and SCSS.",
+      ...generalPoints,
+    ],
+    backend: [
+      "Working Knowledge of databases (MongoDb, MySQL, postgreSQL)",
+      "Working knowledge with SAAS tools (SupabaseAuth, Firebase)",
+      "Experienced with ORMs (Mongoose, SQLalchemy)",
+      "Powerful skills in API development, specifically for web use",
+      "Experienced in Unix/Linux environment",
+      ...generalPoints,
+    ],
+    fullstack: [
+      "Proficient Languages (JavaScript, HTML, CSS, Python)",
+      "Proficient Frameworks (React, Express, FastAPI, Next JS)",
+      "Working Knowledge of databases (MongoDb, MySQL, postgreSQL)",
+      "Proficient in styling tools such as Tailwind, Material UI, CSS Modules, and SCSS.",
+      "Working knowledge with SAAS tools (SupabaseAuth, Firebase)",
+      "Proficient in GIT version control (GIT)",
+      "Experienced with ORMs (Mongoose, SQLalchemy)",
+      "Powerful skills in API development, specifically for web use",
+      "Experienced in Unix/Linux environment",
+      ...generalPoints,
+    ],
+  });
 }
 ---
 
