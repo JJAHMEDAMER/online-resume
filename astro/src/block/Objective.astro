@@ -1,10 +1,11 @@
 ---
 import Section from "../layouts/Section.astro";
+import { getForPosition } from "../utils";
 
-const route = Astro.url.pathname;
+const { position } = Astro.params;
 
 let objective;
-if (route === "/communication") {
+if (position === "/communication") {
   objective =
     "To obtain a position in the telecommunications industry where I can use my skills and knowledge to design, implement, and maintain communication systems.";
 } else {
@@ -12,11 +13,17 @@ if (route === "/communication") {
   //   "Enthusiastic, results-oriented and hard working Software engineer. Working on different projects helped me adopt to changes quickly and made me a mature team worker. I am able to work well both in a team environment as well as using my own initiative. I am able to work well under pressure and adhere to agreed upon deadlines.";
   // objective =
   //   "To obtain a full-stack developer position in a fast-paced, innovative company where I can use my skills in web development, programming, and data science and knowledge to develop innovative, efficient and high-quality software that solves real-world problems";
-  objective =
-    "Seeking a challenging full-stack developer role in a dynamic organization where my extensive experience in crafting scalable web applications and proficiency in modern technologies such as React, Node.js, and MongoDB can contribute to delivering innovative software solutions.";
+  if (position) {
+    objective = getForPosition<string>(position, {
+      frontend:
+        "To secure a Frontend Developer position to leverage my expertise in React and TypeScript to create exceptional user experiences and contribute to innovative web applications",
+      backend:
+        "Seeking a Backend Developer role to utilize my proficiency in Express JS and TypeScript to build robust and scalable systems that drive business growth.",
+      fullstack:
+        "Seeking a challenging full-stack developer role in a dynamic organization where my extensive experience in crafting scalable web applications and proficiency in modern technologies such as React, Node.js, and MongoDB can contribute to delivering innovative software solutions.",
+    });
+  }
 }
-
-console.log(route);
 ---
 
 <Section title="Objective">
