@@ -4,21 +4,31 @@ import TUVAustria from "./TUVAusrtia.astro";
 import CareerStudio from "./CareerStudio.astro";
 import FPLChamp from "./FPLChamp.astro";
 import MoVision from "./MoVision.astro";
+
+const { position: urlPosition } = Astro.params;
+
+let position: string = "Junior FullStack Engineer";
+let workExpList = [MoVision, FPLChamp, TUVAustria, CareerStudio];
+
+if (urlPosition) {
+  if (urlPosition.toLowerCase() === "frontend") {
+    position = "Junior Frontend Engineer";
+    workExpList = [MoVision, FPLChamp, TUVAustria, CareerStudio];
+  } else if (urlPosition.toLowerCase() === "backend") {
+    position = "Junior Backend Engineer";
+    workExpList = [FPLChamp, TUVAustria];
+  }
+}
 ---
 
 <Section title="Experience">
-  <div class="mb">
-    <MoVision />
-  </div>
-  <div class="mb">
-    <FPLChamp />
-  </div>
-  <div class="mb">
-    <TUVAustria />
-  </div>
-  <div class="mb">
-    <CareerStudio />
-  </div>
+  {
+    workExpList.map((Item) => (
+      <div class="mb">
+        <Item position={position} />
+      </div>
+    ))
+  }
 </Section>
 
 <style>

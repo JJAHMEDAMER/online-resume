@@ -1,13 +1,15 @@
 ---
 import Bidirectional from "../../components/Bidirectional.astro";
 import Point from "../../components/Point.astro";
+
+const { position } = Astro.props;
 ---
 
 <>
   <Bidirectional left="MoVision" right="Germany (Remote)" />
   <Bidirectional
     className="job-title"
-    left="Frontend Developer"
+    left={position}
     right="April 2024 - Current"
   />
   <Point
@@ -15,7 +17,10 @@ import Point from "../../components/Point.astro";
       "Designed and implemented a Drag and Drop Email Builder component using native APIs.",
       "Created customizable style forms for each component to enhance user customization.",
       "Developed editable text fields for email headers, paragraphs, buttons, etc.",
-      "Successfully migrated code base to Vite and Tailwind, implementing Prettier and ESLint rules for code cleanliness and organization",
+      "Successfully migrated code base to Vite reducing build time by 50%",
+      "Introduces Prettier and ESLint rules for code cleanliness and organization",
+      "Efficient in using Slack for team communication, Zoom for real-time collaboration and ClickUp for task management and project tracking",
+      "Completed 95% of tasks ahead of schedule by effectively prioritizing and managing workload without direct supervision",
     ]}
   />
 </>

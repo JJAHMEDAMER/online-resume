@@ -1,33 +1,70 @@
 ---
 import Bidirectional from "../../components/Bidirectional.astro";
 import Point from "../../components/Point.astro";
+import { getForPosition } from "../../utils";
+
+const { position: urlPosition } = Astro.params;
+const { position } = Astro.props;
+
+const _archived = [
+  "Expertise in MERN stack (MongoDB, Express.js, React.js, Node.js) for end-to-end web application development.",
+  "Designed, developed, and maintained scalable backend systems using Node.js and Express.js, managing over 50 RESTful endpoints to support various functionalities",
+  "Crafted dynamic and responsive user interfaces with React.js, optimizing more than 30 components ensuring a seamless user experience ",
+  "Actively participated in code reviews, providing constructive feedback for code quality improvement",
+  "Deployed both frontend and backend applications on Google Cloud Run to deliver scalable, high-performance, and cost-effective solutions.",
+  "Utilized Google Cloud Bucket for seamless storage and management of images and other assets.",
+];
+
+const backendBullets = [
+  "Implemented a comprehensive API featuring 50+ endpoints using express JS, developed to meet requirements.",
+  "Developed authentication functionality using Supabase, ensuring secure user access and management.",
+  "Managed MongoDB databases for development and production environments, ensuring efficient data handling.",
+  "Utilized Atlas search to handle complex search queries across a dataset exceeding 13 million documents, improving search efficiency by 3.5 times",
+  "Deployed backend applications on Google Cloud Run to deliver scalable, high-performance, and cost-effective solutions.",
+  "Utilized Google Cloud Bucket for seamless storage and management of images and other assets.",
+  "Leveraged Notion for effective task management, project planning, and comprehensive documentation.",
+  "Utilized Google Meet for real-time communication and synchronous collaboration, ensuring efficient knowledge sharing and decision-making.",
+];
+
+const frontendBullets = [
+  "Implemented a comprehensive website featuring 100+ components using React JS and MUI, developed to meet requirements.",
+  "Utilized DataGrid with Emotion CSS for frontend development, ensuring responsive and user-friendly interfaces.",
+  "Utilized React Query/Tan-Stack Query for data fetch, caching and data validation, leading to a 30% decrease in data loading times.",
+  "Implemented state management using Jotai along with URL-based state persistence, resulting in a 25% reduction in rerenders and improved application performance.",
+  "Developed authentication functionality using Supabase, ensuring secure user access and management.",
+  "Deployed frontend Google Cloud Run to deliver scalable, high-performance, and cost-effective solutions.",
+  "Leveraged Notion for effective task management, project planning, and comprehensive documentation.",
+  "Utilized Google Meet for real-time communication and synchronous collaboration, ensuring efficient knowledge sharing and decision-making.",
+];
+
+const fullStackBullets = [
+  "Implemented a comprehensive website featuring 100+ components and 50+ API endpoints, developed to meet requirements.",
+  "Utilized MUI and DataGrid with Emotion CSS for frontend development, ensuring responsive and user-friendly interfaces.",
+  "Utilized React Query/Tan-Stack Query for data fetch, caching and data validation, leading to a 30% decrease in data loading times.",
+  "Implemented state management using Jotai along with URL-based state persistence, resulting in a 25% reduction in rerenders and improved application performance.",
+  "Developed authentication functionality using Supabase, ensuring secure user access and management.",
+  "Managed MongoDB databases for development and production environments, ensuring efficient data handling.",
+  "Utilized Atlas search to handle complex search queries across a dataset exceeding 13 million documents, improving search efficiency by 3.5 times",
+  "Deployed both frontend and backend applications on Google Cloud Run to deliver scalable, high-performance, and cost-effective solutions.",
+  "Leveraged Notion for effective task management, project planning, and comprehensive documentation.",
+  "Utilized Google Meet for real-time communication and synchronous collaboration, ensuring efficient knowledge sharing and decision-making.",
+];
+
+const bullets: string[] = getForPosition(urlPosition, {
+  frontend: frontendBullets,
+  backend: backendBullets,
+  fullstack: fullStackBullets,
+});
 ---
 
 <>
   <Bidirectional left="FPL Champ" right="Cairo (Remote)" />
   <Bidirectional
     className="job-title"
-    left="Full Stack Developer"
+    left={position}
     right="Jan 2024 - Current"
   />
-  <Point
-    pointsList={[
-      // "Expertise in MERN stack (MongoDB, Express.js, React.js, Node.js) for end-to-end web application development.",
-      // "Designed, developed, and maintained scalable backend systems using Node.js and Express.js, managing over 50 RESTful endpoints to support various functionalities",
-      // "Crafted dynamic and responsive user interfaces with React.js, optimizing more than 30 components ensuring a seamless user experience ",
-      // "Actively participated in code reviews, providing constructive feedback for code quality improvement",
-
-      "Implemented a comprehensive website featuring 80+ components and 50+ API endpoints, developed to meet requirements.",
-      "Utilized MUI and DataGrid with Emotion CSS for frontend development, ensuring responsive and user-friendly interfaces.",
-      "Implemented state management using Jotai along with URL-based state persistence.",
-      "Utilized React Query/Tan-Stack Query for data fetch, caching and data validation",
-      "Developed authentication functionality using Supabase, ensuring secure user access and management.",
-      "Managed MongoDB databases for development and production environments, ensuring efficient data handling.",
-      "Utilized Atlas search to handle complex search queries across a dataset exceeding 13 million documents.",
-      "Deployed both backend and frontend applications on Google Cloud Run for scalable and efficient performance.",
-      "Utilized Google Cloud Bucket for seamless storage and management of images and other assets.",
-    ]}
-  />
+  <Point pointsList={bullets} />
 </>
 
 <style>

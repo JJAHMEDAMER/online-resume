@@ -1,28 +1,59 @@
 ---
 import Bidirectional from "../../components/Bidirectional.astro";
 import Point from "../../components/Point.astro";
+import { getForPosition } from "../../utils";
+
+const { position: urlPosition } = Astro.params;
+const { position } = Astro.props;
+
+const _archived = [
+  [
+    "Designed responsive web pages of user interface",
+    "Partnered with designer teams to take wireframes from conception to implementation.",
+    "Wrote comprehensive code documentation, including inline comments, docblocks, and README files.",
+    "Migrate from wordpress to NextJS",
+  ],
+];
+
+const backendBullets = [
+  "Designed and implemented a robust API using Python, Django to support frontend functionalities.",
+  "Architected and optimized a SQL database schema for efficient data storage and retrieval.",
+  "Deployed and managed backend infrastructure using Versel and Railway.",
+];
+
+const frontendBullets = [
+  "Developed a frontend website used by 1000+ customers, leveraging React and Tailwind for a robust and scalable solution.",
+  "Enhanced developer efficiency by constructing over 50+ reusable UI components and libraries.",
+  "Designed and implemented a user-friendly validation system to verify certificate authenticity.",
+  "Collaborated effectively with design teams to translate wireframes into functional and visually appealing interfaces.",
+  "Ensured code quality and maintainability through comprehensive documentation, including inline comments, docblocks, and README files.",
+  "Successfully migrated a complex website from WordPress to Next.js, improving performance and SEO.",
+];
+
+const fullStackBullets = [
+  "Developed a frontend website used by 1000+ customers, leveraging React and Tailwind for a robust and scalable solution.",
+  "Designed and implemented a user-friendly validation system to verify certificate authenticity.",
+  "Ensured code quality and maintainability through comprehensive documentation, including inline comments, docblocks, and README files.",
+  "Successfully migrated a complex website from WordPress to Next.js, improving performance and SEO.",
+  "Designed and implemented a robust API using Python, Django to support frontend functionalities.",
+  "Architected and optimized a SQL database schema for efficient data storage and retrieval.",
+];
+
+const bullets: string[] = getForPosition(urlPosition, {
+  frontend: frontendBullets,
+  backend: backendBullets,
+  fullstack: fullStackBullets,
+});
 ---
 
 <>
   <Bidirectional left="TUV Austria" right="Sheikh Zayed" />
   <Bidirectional
     className="job-title"
-    left="Fullstack Developer"
+    left={position}
     right="June 2023 - March 2024"
   />
-  <Point
-    pointsList={[
-      "Develop a frontend website used by 1000+ customer",
-      "Built over 35 reusable UI components and libraries",
-      "Architect a validation system for customer to check the validity of the certificate issued by the company",
-      "Design an API and a SQL database",
-      "Developed and maintained user interfaces for web application using NextJs, ContextAPI, Tailwind.",
-      // "Designed responsive web pages of user interface",
-      // "Partnered with designer teams to take wireframes from conception to implementation.",
-      // "Wrote comprehensive code documentation, including inline comments, docblocks, and README files.",
-      // "Migrate from wordpress to NextJS",
-    ]}
-  />
+  <Point pointsList={bullets} />
 </>
 
 <style>
