@@ -13,6 +13,7 @@ import Leadership from "../block/Leadership.astro";
 import ProgrammingSkill from "../block/ProgrammingSkill.astro";
 import GraduationProjectSummary from "../block/GraduationProjectSummary.astro";
 import Headline from "../block/Headline.astro";
+import { RESUME_TITLE } from "../constants";
 
 export function getStaticPaths() {
   return [
@@ -21,6 +22,8 @@ export function getStaticPaths() {
     { params: { position: "fullstack" } },
   ];
 }
+
+const { position } = Astro.params;
 ---
 
 <Layout title="Ahmed Amer Resume">
@@ -49,8 +52,8 @@ export function getStaticPaths() {
 
   <a
     class="download"
-    href="Ahmed-Mohammed-Amer-Resume.pdf"
-    download="Ahmed-Mohammed-Amer-Resume"
+    href={RESUME_TITLE[position]}
+    download={RESUME_TITLE[position]}
   >
     <img src="download.png" alt="download" />
   </a>
