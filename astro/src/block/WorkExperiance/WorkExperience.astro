@@ -7,16 +7,25 @@ import MoVision from "./MoVision.astro";
 
 const { position: urlPosition } = Astro.params;
 
-let position: string = "Junior FullStack Engineer";
-let workExpList = [MoVision, FPLChamp, TUVAustria];
+let position: string = "FullStack Engineer";
+let workExpList: { component: any; title?: string }[] = [
+  { component: MoVision },
+  { component: FPLChamp },
+  { component: TUVAustria },
+];
 
 if (urlPosition) {
   if (urlPosition.toLowerCase() === "frontend") {
-    position = "Junior Frontend Engineer";
-    workExpList = [MoVision, FPLChamp, TUVAustria, CareerStudio];
+    position = "Frontend Engineer";
+    workExpList = [
+      { component: FPLChamp, title: "Frontend Engineer" },
+      { component: MoVision, title: "Frontend Engineer" },
+      { component: TUVAustria, title: "Frontend Engineer" },
+      { component: CareerStudio, title: "Frontend Engineer" },
+    ];
   } else if (urlPosition.toLowerCase() === "backend") {
     position = "Junior Backend Engineer";
-    workExpList = [FPLChamp, TUVAustria];
+    workExpList = [{ component: FPLChamp }, { component: TUVAustria }];
   }
 }
 ---
@@ -25,7 +34,7 @@ if (urlPosition) {
   {
     workExpList.map((Item) => (
       <div class="mb">
-        <Item position={position} />
+        <Item.component position={Item.title || position} />
       </div>
     ))
   }

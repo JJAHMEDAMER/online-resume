@@ -7,8 +7,10 @@ const { title, pointsList } = Astro.props;
   {
     pointsList.map((item) => (
       <p>
-        <span>&#8211;</span>
-        {item}
+        <span class="bulletStyle">&#8211;</span>
+        <span>
+          <Fragment set:html={item} />
+        </span>
       </p>
     ))
   }
@@ -20,7 +22,7 @@ const { title, pointsList } = Astro.props;
     display: flex;
   }
 
-  span {
+  .bulletStyle {
     margin: 0 0.15rem;
     font-weight: 700;
   }
