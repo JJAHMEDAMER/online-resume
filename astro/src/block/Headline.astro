@@ -1,10 +1,22 @@
 ---
-let { position } = Astro.params;
-position = position[0].toUpperCase() + position.slice(1);
+import type { Params } from "../types/astro.types";
+
+let { position } = Astro.params as Params;
+position = position ?? "frontend";
+
+const HEADLINE = {
+  frontend:
+    "Frontend developer with 3+ years of experience in React and NextJS ",
+  backend:
+    "Backend developer with 1+ years of experience in NodeJS and Express",
+  fullStack:
+    "Fullstack developer with 3+ years of experience in React, NextJS, NodeJS and Express",
+  communication: "Communication",
+};
 ---
 
 <p class="head-line">
-  Software developer with 2+ yrs exp in <span>{position} development</span>
+  {HEADLINE[position]}
 </p>
 
 <style>
