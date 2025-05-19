@@ -4,8 +4,10 @@ import TUVAustria from "./TUVAusrtia.astro";
 import CareerStudio from "./CareerStudio.astro";
 import FPLChamp from "./FPLChamp.astro";
 import MoVision from "./MoVision.astro";
+import type { Params } from "../../types/astro.types";
+import ArabianSystems from "./ArabianSystems.astro";
 
-const { position: urlPosition } = Astro.params;
+const { position: urlPosition } = Astro.params as Params;
 
 let position: string = "FullStack Engineer";
 let workExpList: { component: any; title?: string }[] = [
@@ -18,6 +20,7 @@ if (urlPosition) {
   if (urlPosition.toLowerCase() === "frontend") {
     position = "Frontend Engineer";
     workExpList = [
+      { component: ArabianSystems, title: "Frontend Engineer" },
       { component: FPLChamp, title: "Frontend Engineer" },
       { component: MoVision, title: "Frontend Engineer" },
       { component: TUVAustria, title: "Frontend Engineer" },

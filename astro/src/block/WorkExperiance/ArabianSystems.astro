@@ -1,0 +1,45 @@
+---
+import type { Params } from "../../types/astro.types";
+import Bidirectional from "../../components/Bidirectional.astro";
+import Point from "../../components/Point.astro";
+
+const { position: urlPosition } = Astro.params as Params;
+const { position } = Astro.props;
+
+const frontendBullets = [
+  "Developed a real-time shipment tracking application using <b>Next.js 15 and TypeScript</b>, enabling users to monitor live delivery",
+  "Leveraged <b>Google Maps API</b> to visualize live location updates and optimize map rendering performance",
+  "Architected <b>state management using Context API</b> to batch location updates and minimize Google Maps API requests",
+  "Implemented <b>server-side rendering (SSR)</b> in Next.js to reduce initial load time by 40% and improve SEO performance",
+];
+
+const allBullets: Record<Params[keyof Params], string[]> = {
+  frontend: frontendBullets,
+  fullstack: frontendBullets,
+  backend: [],
+  communication: [],
+};
+
+const bullets = allBullets[urlPosition];
+---
+
+{
+  bullets.length > 0 ? (
+    <>
+      <Bidirectional left="Arabian Systems" right="Cairo (Onsite)" />
+      <Bidirectional
+        className="job-title"
+        left={position}
+        right="Dec 2024 - Current"
+      />
+      <Point pointsList={bullets} />
+    </>
+  ) : null
+}
+
+<style>
+  .job-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+</style>
